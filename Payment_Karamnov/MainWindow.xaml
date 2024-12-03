@@ -1,0 +1,44 @@
+﻿<Window x:Class="Payment_Karamnov.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Payment_Karamnov"
+        xmlns:charts="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+        xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        
+        mc:Ignorable="d"
+        Title="PaymentProject" Height="450" Width="800">
+    <Grid>
+       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+
+            <ComboBox x:Name="CmbUser" Width="200" Margin="5" DisplayMemberPath="FIO" SelectionChanged="UpdateChart"
+                      ToolTip="Выберите пользователя"/>
+
+            <ComboBox x:Name="CmbDiagram" Width="200" Margin="5" SelectionChanged="UpdateChart"
+                      ToolTip="Выберите тип диаграммы">
+            
+            </ComboBox>
+
+            <Button x:Name="ButtonExportExcel" Content="Экспорт в Excel" Margin="5" Width="150" Click="ButtonExportExcel_Click"/>
+            <Button x:Name="ButtonExportWord" Content="Экспорт в Word" Margin="5" Width="150" Click="ButtonExportWord_Click"/>
+        </StackPanel>
+
+        <WindowsFormsHost Grid.Row="1" Margin="5">
+            <charts:Chart x:Name="ChartPayments">
+                <charts:Chart.Legends>
+                    <charts:Legend>
+
+                    </charts:Legend>
+                </charts:Chart.Legends>
+            </charts:Chart>
+        </WindowsFormsHost>
+
+    </Grid>
+</Window>
