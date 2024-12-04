@@ -6,9 +6,7 @@
     <Style TargetType="TextBox">
         <Setter Property="FontFamily" Value="Comic Sans MS"/>
     </Style>
-    <Style TargetType="Button">
-        <Setter Property="FontFamily" Value="Comic Sans MS"/>
-    </Style>
+    
 
     <!-- Цветовая схема -->
     <Style TargetType="Window">
@@ -18,8 +16,9 @@
     <SolidColorBrush x:Key="AccentBrush" Color="#0000CC"/>
 
     <!-- Акцентированные кнопки -->
-    <Style x:Key="AccentButtonStyle" TargetType="Button">
+    <Style TargetType="Button">
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
+        <Setter Property="FontFamily" Value="Comic Sans MS"/>
     </Style>
 </ResourceDictionary>
