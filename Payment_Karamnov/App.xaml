@@ -4,27 +4,10 @@
              xmlns:local="clr-namespace:Payment_Karamnov"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="Comic Sans MS"/>
-        </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="FontFamily" Value="Comic Sans MS"/>
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="FontFamily" Value="Comic Sans MS"/>
-        </Style>
-
-        <!-- Цветовая схема -->
-        <Style TargetType="Window">
-            <Setter Property="Background" Value="White"/>
-        </Style>
-        <SolidColorBrush x:Key="AdditionalBackgroundBrush" Color="#99FFFF"/>
-        <SolidColorBrush x:Key="AccentBrush" Color="#0000CC"/>
-
-        <!-- Акцентированные кнопки -->
-        <Style x:Key="AccentButtonStyle" TargetType="Button">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="dictionary1.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -28,20 +28,17 @@ namespace Payment_Karamnov
         {
             InitializeComponent();
             Closing += MainWindow_Closing;
-            CmbUser.ItemsSource = _context.User.ToList(); // ФИО пользователей
-            CmbDiagram.ItemsSource = Enum.GetValues(typeof(SeriesChartType)); // Типы диаграммы
+            CmbUser.ItemsSource = _context.User.ToList(); 
+            CmbDiagram.ItemsSource = Enum.GetValues(typeof(SeriesChartType)); 
 
-            // Создание области для диаграммы и добавление в коллекцию
             ChartPayments.ChartAreas.Add(new ChartArea("Main"));
 
-            // Создание серии данных для диаграммы
             var currentSeries = new Series("Платежи")
             {
                 IsValueShownAsLabel = true
             };
             ChartPayments.Series.Add(currentSeries);
 
-            // Привязка события для обновления диаграммы
             CmbUser.SelectionChanged += UpdateChart;
             CmbDiagram.SelectionChanged += UpdateChart;
 
