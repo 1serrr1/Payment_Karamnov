@@ -10,35 +10,23 @@
         mc:Ignorable="d"
         Title="PaymentProject" Height="450" Width="800">
     <Grid>
-       
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
-
-            <ComboBox x:Name="CmbUser" Width="200" Margin="5" DisplayMemberPath="FIO" SelectionChanged="UpdateChart"
-                      ToolTip="Выберите пользователя"/>
-
+            <ComboBox x:Name="CmbUser" Width="200" Margin="5" DisplayMemberPath="FIO" 
+                      SelectionChanged="UpdateChart" ToolTip="Выберите пользователя"/>
             <ComboBox x:Name="CmbDiagram" Width="200" Margin="5" SelectionChanged="UpdateChart"
-                      ToolTip="Выберите тип диаграммы">
-            
-            </ComboBox>
-
-            <Button x:Name="ButtonExportExcel" Content="Экспорт в Excel" Margin="5" Width="150" Click="ButtonExportExcel_Click"/>
-            <Button x:Name="ButtonExportWord" Content="Экспорт в Word" Margin="5" Width="150" Click="ButtonExportWord_Click"/>
+                      ToolTip="Выберите тип диаграммы"/>
+            <Button x:Name="ButtonExportExcel" Content="Экспорт в Excel" Margin="5" Width="150" 
+                    Click="ButtonExportExcel_Click"/>
+            <Button x:Name="ButtonExportWord" Content="Экспорт в Word" Margin="5" Width="150" 
+                    Click="ButtonExportWord_Click"/>
         </StackPanel>
 
-        <WindowsFormsHost Grid.Row="1" Margin="5">
-            <charts:Chart x:Name="ChartPayments">
-                <charts:Chart.Legends>
-                    <charts:Legend>
-
-                    </charts:Legend>
-                </charts:Chart.Legends>
-            </charts:Chart>
-        </WindowsFormsHost>
-
+        <wfi:WindowsFormsHost x:Name="ChartHost" Grid.Row="1" Margin="5"/>
     </Grid>
 </Window>
+
